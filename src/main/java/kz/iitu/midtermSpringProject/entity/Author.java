@@ -1,7 +1,9 @@
 package kz.iitu.midtermSpringProject.entity;
 
+
 import javax.persistence.*;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "author")
@@ -14,13 +16,12 @@ public class Author {
     private String author_password;
 
     @OneToMany(mappedBy="author")
-    private Set<Book> books;
+    private List<Book> books = new ArrayList<>();
 
-    @ManyToMany
-    private Set<Subscriber> subscribers;
+    @ManyToMany(mappedBy = "publishers",fetch = FetchType.EAGER)
+    private List<Subscriber> subscribers;
 
-    public Author(Long author_id, String author_name, String author_email, String author_password) {
-        this.author_id = author_id;
+    public Author( String author_name, String author_email, String author_password) {
         this.author_name = author_name;
         this.author_email = author_email;
         this.author_password = author_password;
@@ -30,11 +31,11 @@ public class Author {
 
     }
 
-    public Set<Book> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(Set<Book> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
     }
 
@@ -68,6 +69,14 @@ public class Author {
 
     public void setAuthor_password(String author_password) {
         this.author_password = author_password;
+    }
+
+    public List<Subscriber> getSubscribers() {
+        return subscribers;
+    }
+
+    public void setSubscribers(List<Subscriber> subscribers) {
+        this.subscribers = subscribers;
     }
 
     @Override

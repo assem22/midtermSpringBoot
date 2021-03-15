@@ -3,15 +3,16 @@ package kz.iitu.midtermSpringProject.service;
 import kz.iitu.midtermSpringProject.entity.Author;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AuthorService {
-    public List<Author> findAllAuthors();
+    List<Author> findAllAuthors();
 
-    public Author findAuthorById(Long id);
+    Optional<Author> findAuthorById(Long id);
 
-    public void createAuthor(Author author);
+    void createAuthor(Author author);
 
-    public void updateAuthor(Author author);
+    void updateAuthor(Author author);
 
-    public void deleteAuthor(Long id);
+    void deleteAuthor(Long id);
 }

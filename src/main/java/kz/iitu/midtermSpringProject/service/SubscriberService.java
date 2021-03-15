@@ -3,15 +3,16 @@ package kz.iitu.midtermSpringProject.service;
 import kz.iitu.midtermSpringProject.entity.Subscriber;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface SubscriberService {
     List<Subscriber> findAllPublishers();
 
-    Subscriber findPublisherById(Long id);
+    Optional<Subscriber> findPublisherById(Long id);
 
-    void createPublisher(Subscriber subscriber);
+    void createSubscriber(Subscriber subscriber);
 
-    void updatePublisher(Subscriber subscriber);
+    void updateSubscriber(Subscriber subscriber);
 
-    void deletePublisher(Long id);
+    void deleteSubscriber(Long id);
 }

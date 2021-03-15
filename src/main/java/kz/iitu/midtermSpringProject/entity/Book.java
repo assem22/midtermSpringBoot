@@ -21,11 +21,11 @@ public class Book {
 
     }
 
-    public Book(Long book_id, String book_name, String book_genre, String description) {
-        this.book_id = book_id;
+    public Book(String book_name, String book_genre, String description, Author author) {
         this.book_name = book_name;
         this.book_genre = book_genre;
         this.description = description;
+        this.author = author;
     }
 
     public Author getAuthor() {
@@ -74,6 +74,7 @@ public class Book {
                 ", book_name='" + book_name + '\'' +
                 ", book_genre='" + book_genre + '\'' +
                 ", description='" + description + '\'' +
+                ", author='" + author.getAuthor_name() + '\'' +
                 '}';
     }
 }
