@@ -195,7 +195,7 @@ public class Main {
                         "[2] go back");
                 int choice = in.nextInt();
                 if (choice == 2){
-                    return false;
+                    return true;
                 }else if (choice == 1){
                     System.out.println("Enter the id of author");
                     int authorId = in.nextInt();
@@ -212,6 +212,11 @@ public class Main {
             case 2:
                 for (Author author: subscriber.getPublishers()){
                     System.out.println(author);
+//                    for (Book book: bookController.getBooks()){
+//                        if (book.getAuthor().getAuthor_id().equals(author.getAuthor_id())){
+//                            System.out.println(book);
+//                        }
+//                    }
                 }
                 return true;
             case 3:
